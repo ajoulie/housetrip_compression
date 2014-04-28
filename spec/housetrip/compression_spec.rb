@@ -20,5 +20,9 @@ describe Housetrip::Compression do
     it 'transform "a3b6c5" to "aaabbbbbbbbbbccccc"' do
       Housetrip::Compression.decode('a3b10c5').should eq('aaabbbbbbbbbbccccc')
     end
+
+    it 'does not transform "abcdef"' do
+      Housetrip::Compression.decode('abcdef').should eq('abcdef')
+    end
   end
 end

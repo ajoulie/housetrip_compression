@@ -8,9 +8,10 @@ module Housetrip
     end
 
     def self.decode(str)
-      str.scan(/(.)(\d+)/).map do |char, count|
+      result = str.scan(/(.)(\d+)/).map do |char, count|
         char * (count.to_i)
       end.join
+      result == "" ? str : result
     end
   end
 end
