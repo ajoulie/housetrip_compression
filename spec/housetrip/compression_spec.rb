@@ -15,4 +15,10 @@ describe Housetrip::Compression do
       Housetrip::Compression.encode('aaabbbbbbbbbbccccc').should eq('a3b10c5')
     end
   end
+
+  describe '#decode' do
+    it 'transform "a3b6c5" to "aaabbbbbbbbbbccccc"' do
+      Housetrip::Compression.decode('a3b10c5').should eq('aaabbbbbbbbbbccccc')
+    end
+  end
 end

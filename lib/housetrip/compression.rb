@@ -6,5 +6,11 @@ module Housetrip
       end.join
       result.length >= str.length ? str : result
     end
+
+    def self.decode(str)
+      str.scan(/(.)(\d+)/).map do |char, count|
+        char * (count.to_i)
+      end.join
+    end
   end
 end
