@@ -1,0 +1,5 @@
+Installation :
+bundle install
+
+Run test :
+rspec spec/
